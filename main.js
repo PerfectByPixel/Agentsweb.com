@@ -1,0 +1,22 @@
+const navToggle = document.querySelector('.mobile-nav-toggle');
+const primaryNav = document.querySelector('.primary-navigation');
+
+navToggle.addEventListener('click', () => {
+	primaryNav.hasAttribute("data-visible") 
+	? navToggle.setAttribute("aria-expanded", false) 
+	: navToggle.setAttribute("aria-expanded", true);
+	primaryNav.toggleAttribute("data-visible");
+});
+
+
+const items = document.querySelectorAll('.accordion button');
+function toggleAccordion() {
+  const itemToggle = this.getAttribute('aria-expanded');
+  for (i = 0; i < items.length; i++) {
+    items[i].setAttribute('aria-expanded', 'false');
+  }
+  if (itemToggle == 'false') {
+    this.setAttribute('aria-expanded', 'true');
+  }
+}
+items.forEach((item) => item.addEventListener('click', toggleAccordion));
