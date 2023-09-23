@@ -336,26 +336,32 @@
 				<div class="content-columns">
 					<div class="massage-contact">
 						<h2>Send us a message</h2>
-						<form class="flow" id="sundae-order-form" method="post">
+						<form class="flow" id="form-contact" action="contact-form.php" method="post">
 							<div class="space-input">
 								<label for="name">First Name</label>
 								<br>
-								<input class="style-input" type="text" autocomplete="name" required>
+								<input class="style-input" type="text" id="name" name="name" autocomplete="name" required>
 								<div class="line"></div>
 							</div>
 							<div class="space-input">
 								<label for="email">Email</label>
 								<br>
-								<input class="style-input" type="text" autocomplete="email" required>
+								<input class="style-input" type="text" id="email" name="email" autocomplete="email" required>
 								<div class="line"></div>
 							</div>
 							<div class="space-input">
 								<label for="message">Message</label>
 								<br>
-								<textarea class="style-textarea" id="message" name="message" rows="5" cols="20"></textarea>
+								<textarea class="style-textarea" id="message" name="message" rows="5" cols="20" required></textarea>
 								<div class="line"></div>
 							</div>
-							<button class="button-send | margin-block-start-4rem" type="submit">Send Message</button>
+							<button class="button-send | margin-block-start-4rem" 
+								type="submit" 
+								data-sitekey="6LfjKUkoAAAAAGkf3py4pEiW8Z7UQEgjdbYhlusx" 
+								data-callback='onSubmit' 
+								data-action='submit'>
+								Send Message
+							</button>
 						</form>
 					</div>
 					<div class="contact-us">
@@ -397,6 +403,9 @@
 		</nav>
 	</footer>
     
-	<script src="main.js"></script>
+	<script src="main.js" async defer></script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<script src="reCAPTCHAUtilities.js" async defer></script>
+
 </body>
 </html>
